@@ -13,19 +13,19 @@ class Program
         {
             Console.WriteLine("Your grade is an A");
         }
-        else (grade < 90 && grade >= 80)
+        else if (grade < 90 && grade >= 80)
         {
             Console.WriteLine("Your grade is an B");
         }
-        else (grade < 80 && grade >= 70)
+        else if (grade < 80 && grade >= 70)
         {
             Console.WriteLine("Your grade is an C");
         }
-        else (grade < 70 && grade >= 60)
+        else if (grade < 70 && grade >= 60)
         {
             Console.WriteLine("Your grade is an D");
         }
-        else (grade < 60)
+        else
         {
             Console.WriteLine("Your grade is an F");
         }
