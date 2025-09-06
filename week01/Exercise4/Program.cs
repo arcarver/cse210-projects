@@ -28,8 +28,8 @@ class Program
         float totalItems = numbers.Count;
         float average = total / totalItems;
         Console.WriteLine($"The average is: {average}");
-        int largestNumber = numbers.Max();
-        Console.WriteLine($"The largest number is: {largestNumber}");
+        int biggestNumber = numbers.Max();
+        Console.WriteLine($"The largest number is: {biggestNumber}");
 
 
 
