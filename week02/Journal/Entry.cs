@@ -6,6 +6,9 @@ public class Entry
 
     public void Display()
     {
-        Console.WriteLine("Here are my journal entries!");
+        Console.WriteLine("Here is my journal entry!");
+        Console.WriteLine($"Date is: {_date} ");
+        Console.WriteLine($"Writing prompt: {_promptText}");
+        Console.WriteLine($"Entry: {_entryText}");
     }
 }

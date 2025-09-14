@@ -4,10 +4,15 @@ public class Journal
 
     public void AddEntry(Entry newEntry)
     {
-
+        
+        _entries.Add(newEntry);
     }
     public void DisplayAll()
     {
+        foreach (Entry entryInList in _entries)
+        {
+            entryInList.Display();
+        }
 
     }
     public void SafeToFile(string file)
@@ -16,7 +21,7 @@ public class Journal
     }
     public void LoadFromFile(string file)
     { 
-        
+
     }
 
 }
