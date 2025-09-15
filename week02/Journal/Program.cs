@@ -49,12 +49,12 @@ class Program
             else if (choice == "4")
             {
                 Console.WriteLine("Loading from file");
-                Journal journalFromFile = new Journal();
+                
                 Console.WriteLine("What file do you want to load? ");
                 // string fileName = Console.ReadLine();
                 string fileName = "journal.json";
-                journalFromFile.LoadFromFile(fileName);
-                journalFromFile.DisplayAll();
+                myJournal.LoadFromFile(fileName);
+                
             }
             else
             {
