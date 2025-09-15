@@ -1,4 +1,3 @@
-using System.IO;
 using System.Text.Json;
 
 public class Journal
@@ -20,33 +19,21 @@ public class Journal
     }
     public void SafeToFile(string file)
     {
-        using (StreamWriter outputFile = new StreamWriter(file))
+        JsonSerializerOptions options = new JsonSerializerOptions()
         {
-            foreach (Entry entry in _entries) {
-                outputFile.WriteLine($"{entry._date}$|${entry._entryText}$|${entry._promptText}");
-            }
-        }
+            IncludeFields = true
+        };
+        string jsonString = JsonSerializer.Serialize(_entries, options);
+        string filePath = file;
+        File.WriteAllText(filePath, jsonString);
     }
     public void LoadFromFile(string file)
     {
-        string filename = file;
-        string[] lines = System.IO.File.ReadAllLines(filename);
-
-        foreach (string line in lines)
+        string jsonString = File.ReadAllText(file);
+        JsonSerializerOptions options = new JsonSerializerOptions()
         {
-            string[] parts = line.Split("$|$");
-
-            string date = parts[0];
-            string entryText = parts[1];
-            string promptText = parts[2];
-            Entry entryFromFile = new Entry()
-            {
-                _date = date,
-                _entryText = entryText,
-                _promptText = promptText
-            };
-            _entries.Add(entryFromFile);
-        }
+            IncludeFields = true
+        };
+        _entries = JsonSerializer.Deserialize<List<Entry>>(jsonString, options);
     }
-
 }

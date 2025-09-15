@@ -22,7 +22,7 @@ class Program
 
         Console.Write("Where would you like to save your file? ");
         // string fileName = Console.ReadLine();
-        string fileName = "journal.csv";
+        string fileName = "journal.json";
 
         myJournal.SafeToFile(fileName);
 
