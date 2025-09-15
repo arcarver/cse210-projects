@@ -6,7 +6,6 @@ public class Journal
 
     public void AddEntry(Entry newEntry)
     {
-
         _entries.Add(newEntry);
     }
     public void DisplayAll()
@@ -17,7 +16,6 @@ public class Journal
         {
             entryInList.Display();
         }
-
     }
     public void SafeToFile(string file)
     {

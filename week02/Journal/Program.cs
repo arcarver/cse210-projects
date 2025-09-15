@@ -4,7 +4,6 @@
 using System;
 using System.Runtime.CompilerServices;
 
-
 class Program
 {
     static void Main(string[] args)
@@ -29,8 +28,8 @@ class Program
                 entry._promptText = promptGenerator.GetRandomPrompt();
                 Console.WriteLine($"Here is today's writing prompt: {entry._promptText}");
                 Console.WriteLine("Journal Entry: ");
-                // entry._entryText = Console.ReadLine();
-                entry._entryText = "my entry";
+                entry._entryText = Console.ReadLine();
+                // entry._entryText = "my entry";
                 myJournal.AddEntry(entry);
             }
             else if (choice == "2")
@@ -40,19 +39,18 @@ class Program
             else if (choice == "3")
             {
                 Console.Write("Where would you like to save your file? ");
-                // string fileName = Console.ReadLine();
-                string fileName = "journal.json";
-                myJournal.SafeToFile(fileName);                
+                string fileName = Console.ReadLine();
+                // string fileName = "journal.json";
+                myJournal.SafeToFile(fileName);
             }
             else if (choice == "4")
             {
                 Console.WriteLine("Loading from file");
-                
                 Console.WriteLine("What file do you want to load? ");
-                // string fileName = Console.ReadLine();
-                string fileName = "journal.json";
+                string fileName = Console.ReadLine();
+                // string fileName = "journal.json";
                 myJournal.LoadFromFile(fileName);
-                
+                myJournal.DisplayAll();
             }
             else
             {
