@@ -11,6 +11,8 @@ public class Journal
     }
     public void DisplayAll()
     {
+        Console.WriteLine($"Displaying {_entries.Count} journal entries");
+        Console.WriteLine("");
         foreach (Entry entryInList in _entries)
         {
             entryInList.Display();
