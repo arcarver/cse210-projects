@@ -17,7 +17,7 @@ class Program
         Console.WriteLine($"Fraction is {defaultFraction.GetFractionString()}");
         Console.WriteLine($"Decimal is {defaultFraction.GetDecimalValue()}");
 
-        Fraction oneFraction = new Fraction(1);
+        Fraction oneFraction = new Fraction();
         Fraction fiveFraction = new Fraction(5);
         Fraction threeFourthsFraction = new Fraction(3, 4);
         Fraction oneThirdFraction = new Fraction(1, 3);
