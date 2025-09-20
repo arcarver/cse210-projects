@@ -28,14 +28,14 @@ public class Fraction
         _top = top;
     }
 
-    // public int GetBottom()
-    // {
-
-    // }
-    // public void SetBottom(int bottom)
-    // {
-
-    // }
+    public int GetBottom()
+    {
+        return _bottom;
+    }
+    public void SetBottom(int bottom)
+    {
+        _bottom = bottom;
+    }
 
     // public string GetFractionString()
     // {

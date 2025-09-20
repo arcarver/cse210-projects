@@ -11,6 +11,8 @@ class Program
         Console.WriteLine($"Top is {defaultFraction.GetTop()}");
         defaultFraction.SetTop(42);
         Console.WriteLine($"Top is now {defaultFraction.GetTop()}");
-        
+        Console.WriteLine($"Bottom is {defaultFraction.GetBottom()}");
+        defaultFraction.SetBottom(63);
+        Console.WriteLine($"Bottom is now {defaultFraction.GetBottom()}");
     }
 }
