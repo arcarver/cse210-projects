@@ -10,8 +10,15 @@ public class Reference
         _chapter = chapter;
         _verse = verse;
         _endVerse = verse;
+
     }
-    public Reference(string book, int chapter, int startVerse, int endVerse) { }
+    public Reference(string book, int chapter, int startVerse, int endVerse)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verse = startVerse;
+        _endVerse = endVerse;
+    }
     public string GetDisplayText()
     {
         if (_verse != _endVerse)

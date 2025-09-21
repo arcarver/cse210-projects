@@ -20,11 +20,11 @@ public class Scripture
         {
             if (displayText.Length == 0)
             {
-                displayText += word;
+                displayText += word.GetDisplayText();
             }
             else
             {
-                displayText += " " + word;
+                displayText += " " + word.GetDisplayText();
             }
         }
 
