@@ -8,6 +8,7 @@ public class Scripture
     public Scripture(Reference Reference, string text)
     {
         _reference = Reference;
+        Console.WriteLine(_reference.GetDisplayText() + " " +text); 
     }
     public void HideRandomWords(int numberToHide)
     {
