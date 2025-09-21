@@ -15,10 +15,30 @@ public class Scripture
     }
     public string GetDisplayText()
     {
-        return "";
+        string displayText = "";
+        foreach (Word word in _words)
+        {
+            if (displayText.Length == 0)
+            {
+                displayText += word;
+            }
+            else
+            {
+                displayText += " " + word;
+            }
+        }
+
+        return displayText;
     }
     public bool IsCompletelyHidden()
     {
-        return true;  
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
