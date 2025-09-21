@@ -5,10 +5,13 @@ public class Scripture
     private Reference _reference;
     private List<Word> _words = new List<Word>();
 
-    public Scripture(Reference Reference, string text)
+    public Scripture(Reference reference, string text)
     {
-        _reference = Reference;
-        Console.WriteLine(_reference.GetDisplayText() + " " +text); 
+        _reference = reference;
+        // Console.WriteLine(_reference.GetDisplayText() + " " + text);
+        List<string> stringList = text.Split(" ", StringSplitOptions.RemoveEmptyEntries).ToList();
+        List<Word> wordList = stringList.Select(s => new Word(s)).ToList();
+        _words = wordList;
     }
     public void HideRandomWords(int numberToHide)
     {
@@ -16,17 +19,11 @@ public class Scripture
     }
     public string GetDisplayText()
     {
-        string displayText = "";
+        string displayText = _reference.GetDisplayText() + " -";
+        // Console.WriteLine(_reference.GetDisplayText());
         foreach (Word word in _words)
         {
-            if (displayText.Length == 0)
-            {
-                displayText += word.GetDisplayText();
-            }
-            else
-            {
-                displayText += " " + word.GetDisplayText();
-            }
+            displayText += " " + word.GetDisplayText();
         }
 
         return displayText;
