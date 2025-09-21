@@ -15,7 +15,16 @@ public class Scripture
     }
     public void HideRandomWords(int numberToHide)
     {
-
+        Random randomGenerator = new Random();
+        List<Word> filteredList = _words.Where(item => !item.IsHidden()).ToList();
+        while (filteredList.Count > 0 && numberToHide > 0)
+        {
+            int magicNumber = randomGenerator.Next(0, filteredList.Count);
+            Word wordToHide = filteredList[magicNumber];
+            wordToHide.Hide();
+            filteredList.Remove(wordToHide);
+            numberToHide--;
+        }
     }
     public string GetDisplayText()
     {

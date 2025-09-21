@@ -22,7 +22,7 @@ class Program
         firstScripture.HideRandomWords(1);
         Console.WriteLine($"FirstScripture 1 hidden: {firstScripture.GetDisplayText()}");
         Console.WriteLine($"FirstScripture Hidden {firstScripture.IsCompletelyHidden()}");
-        firstScripture.HideRandomWords(3);
+        firstScripture.HideRandomWords(2);
         Console.WriteLine($"FirstScripture all hidden: {firstScripture.GetDisplayText()}");
         Console.WriteLine($"FirstScripture Hidden {firstScripture.IsCompletelyHidden()}");
     }
