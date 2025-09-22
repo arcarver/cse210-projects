@@ -1,5 +1,11 @@
 using System;
 
+// Annie Carver
+// Scripture Memorizer
+// 9/21/25
+// 
+// Showing Creativity and Exceeding Requirements:
+// Randomly selects from only those words that are not already hidden.
 class Program
 {
     static void Main(string[] args)
