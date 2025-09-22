@@ -4,6 +4,37 @@ class Program
 {
     static void Main(string[] args)
     {
+        string stop = "";
+        // stop = "quit";
+        // tests();
+        // Console.Clear();
+        Reference multiReference = new Reference("Proverbs ", 3, 5, 6);
+        Scripture firstScripture = new Scripture(multiReference, "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
+
+        Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
+
+        while (stop != "quit")
+        {
+            // Console.WriteLine($"MultiReference {multiReference.GetDisplayText()}");
+            // write the scripture
+            Console.WriteLine($"{firstScripture.GetDisplayText()}");
+
+            Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+            stop = Console.ReadLine();
+            // if the number of words that are not hidden become 0 then the stop = quit
+            if (firstScripture.IsCompletelyHidden() == true)
+            {
+                stop = "quit";
+            }
+
+            // block our words
+            firstScripture.HideRandomWords(3);
+        }
+
+    }
+
+    static void tests()
+    {
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
         Word happyWord = new Word("happy");
         Console.WriteLine($"Word: {happyWord.GetDisplayText()}");
