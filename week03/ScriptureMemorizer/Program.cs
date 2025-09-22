@@ -7,10 +7,11 @@ class Program
         string stop = "";
         // stop = "quit";
         // tests();
-        // Console.Clear();
+
         Reference multiReference = new Reference("Proverbs ", 3, 5, 6);
         Scripture firstScripture = new Scripture(multiReference, "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
 
+        clearConsole();
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
 
         while (stop != "quit")
@@ -27,10 +28,28 @@ class Program
                 stop = "quit";
             }
 
-            // block our words
-            firstScripture.HideRandomWords(3);
-        }
+            if (stop != "quit")
+            {
+                clearConsole();
 
+                // block our words
+                firstScripture.HideRandomWords(3);
+            }
+        }
+    }
+
+    static void clearConsole()
+    {
+        try
+        {
+            Console.Clear();
+        }
+        catch (IOException)
+        {
+            // IOException happens if debugger is running
+            // Add blank line instead
+            Console.WriteLine("");
+        }
     }
 
     static void tests()
