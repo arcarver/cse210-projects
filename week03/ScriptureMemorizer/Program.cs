@@ -32,7 +32,7 @@ class Program
             {
                 clearConsole();
 
-                // block our words
+                // block out words
                 firstScripture.HideRandomWords(3);
             }
         }
@@ -40,6 +40,8 @@ class Program
 
     static void clearConsole()
     {
+        // Run without debugger using Ctrl+F5
+        // Or do Menu -> Run -> Run without Debugger
         try
         {
             Console.Clear();
