@@ -93,10 +93,10 @@ class Program
         List<Video> videos = new List<Video>([video1, video2, video3, video4]);
         foreach (Video video in videos)
         {
-            Console.WriteLine(video._trackTitle);
-            Console.WriteLine(video._trackAuthor);
-            Console.WriteLine(video._trackLength);
-            Console.WriteLine(video.NumberOfComments());
+            Console.WriteLine($"Video Title: {video._trackTitle}");
+            Console.WriteLine($"Video Author: {video._trackAuthor}");
+            Console.WriteLine($"Video Length: {video._trackLength} seconds");
+            Console.WriteLine($"Number of comments: {video.NumberOfComments()}");
             foreach (var item in video._commentList)
             {
                 Console.WriteLine($"'{item._commentText}'-{item._nameOfPersonCommenting}.");
