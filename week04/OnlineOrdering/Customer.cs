@@ -21,5 +21,6 @@ public class Customer
         {
             return false;
         }
+        //could have also just returned _customerAddress.IfUsa()
     }
 }
