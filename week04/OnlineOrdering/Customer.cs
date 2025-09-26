@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 
 public class Customer
 {
@@ -22,5 +23,13 @@ public class Customer
             return false;
         }
         //could have also just returned _customerAddress.IfUsa()
+    }
+    public string GetCustomerAddress()
+    {
+        return _customerAddress.MakeAddress();
+    }
+    public string GetCustomerName()
+    {
+        return _customerName;
     }
 }
