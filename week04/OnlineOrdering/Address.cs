@@ -18,4 +18,11 @@ public class Address
     {
         return _country == "USA";
     }
+
+    public string MakeAddress()
+    {
+        return "${_street}, {_city}, {_stateOrProvence}";
+}
+
+    // Need Order.cs class
 }

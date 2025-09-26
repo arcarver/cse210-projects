@@ -3,15 +3,23 @@ using System.Reflection;
 public class Customer
 {
     private string _customerName;
-    private string _address;
+    private Address _customerAddress;
 
-    public Customer(string customerName, string customerAddress)
+    public Customer(string customerName, Address customerAddress)
     {
         _customerName = customerName;
-        _address = customerAddress;
+        _customerAddress = customerAddress;
     }
-    // public bool CheckIfUsa()
-    // {
-    //     true;
-    // }
+    public bool CheckIfUsa()
+    {
+
+        if (_customerAddress.IsUsa() == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
