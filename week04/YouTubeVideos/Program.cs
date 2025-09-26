@@ -97,6 +97,11 @@ class Program
             Console.WriteLine(video._trackAuthor);
             Console.WriteLine(video._trackLength);
             Console.WriteLine(video.NumberOfComments());
+            foreach (var item in video._commentList)
+            {
+                Console.WriteLine($"'{item._commentText}'-{item._nameOfPersonCommenting}.");
+            }
+            Console.WriteLine();
         }
     }
 }
