@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the YouTubeVideos Project.");
+        // Console.WriteLine("Hello World! This is the YouTubeVideos Project.");
         Video video1 = new Video();
 
         video1._trackTitle = "The Fruitcake Song";
@@ -36,12 +36,12 @@ class Program
         video2._commentList.Add(comment4);
 
         Comment comment5 = new Comment();
-        comment5._commentText = "That is what I want to!";
+        comment5._commentText = "That is what I want also!";
         comment5._nameOfPersonCommenting = "Milo Homes";
         video2._commentList.Add(comment5);
 
         Comment comment6 = new Comment();
-        comment6._commentText = "Make sure you watch at 45 seconds in. So funny";
+        comment6._commentText = "Make sure you watch close at 45 seconds in. So funny";
         comment6._nameOfPersonCommenting = "Hermes Kinder";
         video2._commentList.Add(comment6);
 
@@ -76,7 +76,7 @@ class Program
         video4._commentList.Add(comment10);
 
         Comment comment11 = new Comment();
-        comment11._commentText = "I watch this everyyear!";
+        comment11._commentText = "I watch this every year!";
         comment11._nameOfPersonCommenting = "H Solo";
         video4._commentList.Add(comment11);
 
@@ -86,7 +86,7 @@ class Program
         video4._commentList.Add(comment12);
 
         Comment comment13 = new Comment();
-        comment13._commentText = "Granpa Likes it also.";
+        comment13._commentText = "Grandpa Likes it also.";
         comment13._nameOfPersonCommenting = "Petra Pannet";
         video4._commentList.Add(comment13);
 
