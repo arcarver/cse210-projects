@@ -85,6 +85,11 @@ class Program
         comment12._nameOfPersonCommenting = "Peter Pannet";
         video4._commentList.Add(comment12);
 
+        Comment comment13 = new Comment();
+        comment13._commentText = "Granpa Likes it also.";
+        comment13._nameOfPersonCommenting = "Petra Pannet";
+        video4._commentList.Add(comment13);
+
         List<Video> videos = new List<Video>([video1, video2, video3, video4]);
         foreach (Video video in videos)
         {
