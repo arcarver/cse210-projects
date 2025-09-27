@@ -21,7 +21,7 @@ public class Address
 
     public string MakeAddress()
     {
-        return $"{_street}, {_city}, {_stateOrProvince}";
+        return $"{_street}, {_city}, {_stateOrProvince}, {_country}";
     }
 
     // Need Order.cs class

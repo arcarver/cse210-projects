@@ -2,10 +2,10 @@ public class Product
 {
     private string _productName;
     private string _productId;
-    private int _price;
+    private double _price;
     private int _quantity;
 
-    public Product(string productName, string productId, int price, int quantity)
+    public Product(string productName, string productId, double price, int quantity)
     {
         _productName = productName;
         _productId = productId;
