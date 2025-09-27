@@ -26,7 +26,11 @@ public class Order
             totalCost = totalCost + 35;
         }
         return totalCost;
-        
+
+    }
+    public string ShippingLabel()
+    {
+        return $"{_customerInfo.GetCustomerName}\r\n{_customerInfo.GetCustomerAddress} ";
     }
 
 }
