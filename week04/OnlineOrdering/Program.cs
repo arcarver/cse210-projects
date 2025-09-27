@@ -33,6 +33,23 @@ class Program
         Customer customer6 = new Customer("Linden Gilbert", address6);
         Customer customer7 = new Customer("Bridget Lorder", address7);
 
+        Order order1 = new Order(
+            new List<Product>([product1, product2]),
+            customer1);
+        Order order2 = new Order(
+            new List<Product>([product1, product4, product5]),
+            customer2);
+        Order order3 = new Order(
+            new List<Product>([product3, product6, product7]),
+            customer3);
 
+        List<Order> customerOrders = new List<Order>(
+            [order1, order2, order3]);
+
+        foreach (Order customerOrder in customerOrders)
+        {
+            Console.WriteLine($"Shipping Label: {customerOrder.ShippingLabel()}");
+            Console.WriteLine($"Total Cost: {customerOrder.TotalCostOfOrder()}");
+        }
     }
 }

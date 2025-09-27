@@ -30,7 +30,7 @@ public class Order
     }
     public string ShippingLabel()
     {
-        return $"{_customerInfo.GetCustomerName}\r\n{_customerInfo.GetCustomerAddress} ";
+        return $"{_customerInfo.GetCustomerName()}\r\n{_customerInfo.GetCustomerAddress()} ";
     }
 
 }
