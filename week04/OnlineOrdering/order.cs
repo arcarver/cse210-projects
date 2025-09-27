@@ -25,7 +25,7 @@ public class Order
         {
             totalCost = totalCost + 35;
         }
-        return totalCost;
+        return Math.Round(totalCost, 2);
 
     }
     public string ShippingLabel()
