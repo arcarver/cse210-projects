@@ -33,4 +33,15 @@ public class Order
         return $"{_customerInfo.GetCustomerName()}\r\n{_customerInfo.GetCustomerAddress()} ";
     }
 
+    public string PackingLabel()
+    {
+        string packingLabel = "";
+
+        foreach (Product item in _itemsInOrder)
+        {
+            packingLabel += $"{item.GetProductId()} - {item.GetProductName()} - quantity {item.GetTotalItems()}  - ${item.GetTotalCostOfItem()}\r\n";
+        }
+        return packingLabel;
+    }
+
 }

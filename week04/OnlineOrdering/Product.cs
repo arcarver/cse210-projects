@@ -25,4 +25,8 @@ public class Product
     {
         return _productName;
     }
+    public int GetTotalItems()
+    {
+        return _quantity;
+    }
 }

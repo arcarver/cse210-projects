@@ -48,8 +48,14 @@ class Program
 
         foreach (Order customerOrder in customerOrders)
         {
-            Console.WriteLine($"Shipping Label: {customerOrder.ShippingLabel()}");
-            Console.WriteLine($"Total Cost: {customerOrder.TotalCostOfOrder()}");
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine($"Shipping Label:\r\n{customerOrder.ShippingLabel()}");
+            Console.WriteLine();
+            Console.WriteLine($"Total Cost:\r\n{customerOrder.TotalCostOfOrder()}");
+            Console.WriteLine();
+            Console.WriteLine($"Packing label:\r\n{customerOrder.PackingLabel()}");
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine();
         }
     }
 }
