@@ -26,8 +26,16 @@ public class Activity
     }
     public void DisplayEndingMessage()
     {
-        Console.WriteLine($"You have completed another {_duration} of the {_name}.");
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
         Thread.Sleep(5000);
+        for (int i = 5; i > 0; i--)
+        {
+            Console.Write(".");
+            Thread.Sleep(1000);
+            // This doesn't work under debugger
+            // Run without debugger using Ctrl+F5
+            // Console.Write("\b\b  \b\b");
+        }
     }
     public void ShowSpinner(int seconds)
     {
@@ -41,20 +49,36 @@ public class Activity
         spinnerString.Add("-");
         spinnerString.Add("\\");
 
-        foreach (string s in spinnerString)
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(seconds);
+
+        int i = 0;
+
+        while (DateTime.Now < endTime)
         {
+            string s = spinnerString[i];
             Console.Write(s);
             Thread.Sleep(400);
+            // This doesn't work under debugger
+            // Run without debugger using Ctrl+F5
             Console.Write("\b \b");
+
+            i++;
+            if (i >= spinnerString.Count)
+            {
+                i = 0;
+            }
         }
     }
     public void ShowCountDown(int seconds)
     {
         for (int i = seconds; i > 0; i--)
         {
-            Console.WriteLine(i);
+            Console.Write(i);
             Thread.Sleep(1000);
-            Console.WriteLine("\b \b");
+            // This doesn't work under debugger
+            // Run without debugger using Ctrl+F5
+            Console.Write("\b\b  \b\b");
         }
     }
 }
