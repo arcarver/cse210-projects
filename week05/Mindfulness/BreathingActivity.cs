@@ -20,7 +20,6 @@ public class BreathingActivity : Activity
         Console.WriteLine();
         Console.WriteLine("This activity will help you relax by walking you throught breathing in and out slowly.  Clear your mind and focus on your breathing.");
         Console.WriteLine();
-        Console.Write("How long, in seconds, would you like for your sesssion? ");
-        _duration = int.Parse(Console.ReadLine());
+       
     }
 }

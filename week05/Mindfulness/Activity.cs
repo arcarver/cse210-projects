@@ -18,18 +18,44 @@ public class Activity
     public void DisplayStartingMessage()
     {
         Console.WriteLine($"Welcome to the {_name}.");
+        Console.WriteLine();
+        Console.WriteLine(_description);
+        Console.WriteLine();
+        Console.Write("How long, in seconds, would you like for your sesssion? ");
+        _duration = int.Parse(Console.ReadLine());
     }
     public void DisplayEndingMessage()
     {
-
+        Console.WriteLine($"You have completed another {_duration} of the {_name}.");
+        Thread.Sleep(5000);
     }
     public void ShowSpinner(int seconds)
     {
+        List<string> spinnerString = new List<string>();
+        spinnerString.Add("|");
+        spinnerString.Add("/");
+        spinnerString.Add("-");
+        spinnerString.Add("\\");
+        spinnerString.Add("|");
+        spinnerString.Add("/");
+        spinnerString.Add("-");
+        spinnerString.Add("\\");
 
+        foreach (string s in spinnerString)
+        {
+            Console.Write(s);
+            Thread.Sleep(400);
+            Console.Write("\b \b");
+        }
     }
     public void ShowCountDown(int seconds)
     {
-
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.WriteLine(i);
+            Thread.Sleep(1000);
+            Console.WriteLine("\b \b");
+        }
     }
 }
 
