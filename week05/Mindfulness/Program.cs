@@ -13,5 +13,28 @@ class Program
         Console.WriteLine("    3. Start Listening Activity");
         Console.WriteLine("    4. Quit");
         Console.WriteLine("Select a choice from the menu: ");
-    }
+        string choice = Console.ReadLine();
+        bool finish = false;
+        while (finish != true)
+        {
+            if (choice == "1")
+            {
+
+            }
+            else if (choice == "2") { }
+            else if (choice == "3")
+            {
+
+            }
+            else if (choice == "4")
+            {
+                Console.WriteLine("Thank you for using my mindfullness program. Have a nice day!");
+                finish = true;
+            }
+            else
+            {
+                Console.WriteLine("Please select one of the options.");
+            }
+        }
+    } 
 }
