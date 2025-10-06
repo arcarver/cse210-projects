@@ -26,10 +26,13 @@ public class Activity
         Console.Clear();
 
         Console.WriteLine("Get ready...");
+        ShowSpinner(5);
 
     }
     public void DisplayEndingMessage()
     {
+        Console.WriteLine("Well done!!");
+        Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
         Thread.Sleep(5000);
         for (int i = 5; i > 0; i--)
