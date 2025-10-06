@@ -42,5 +42,6 @@ class Program
             {
                 Console.WriteLine("Please select one of the options.");
             }
+        }
     }
 }
