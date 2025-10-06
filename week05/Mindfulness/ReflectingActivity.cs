@@ -32,7 +32,7 @@ public class ReflectingActivity : Activity
         {
             Console.WriteLine();
             Console.Write("Consider the following prompt:");
-            Console.WriteLine($"---- {_prompts}");
+            GetRandomPrompt();
             Console.WriteLine("When you have something in mind, press enter to continue.");
 
             // using enter to move to next part of program
@@ -54,8 +54,9 @@ public class ReflectingActivity : Activity
             Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
             Console.Write("You may begin in: ");
             ShowCountDown(4);
-            
+
             _duration = _duration - 4;
+            GetRandomQuestion();
         }
 
     }
