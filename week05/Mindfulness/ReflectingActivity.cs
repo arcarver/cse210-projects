@@ -6,12 +6,24 @@ public class ReflectingActivity : Activity
     {
         _prompts = prompts;
         _questions = questions;
-    _name = name;
-        _description = description;
+        _name = "Reflecting Activity";
+        _description = "This activity will help you relect on times in your life when you have shown strenght and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life. ";
         _duration = duration;
     }
     public void Run()
-    { }
+    {
+        Console.WriteLine();
+        while (_duration > 0)
+        {
+            Console.Write("Breath in...");
+            ShowCountDown(4);
+            Console.WriteLine();
+            Console.Write("Breath out...");
+            ShowCountDown(6);
+            _duration = _duration - 10;
+        }
+
+    }
     public string GetRandomPrompt()
     {
         return "";
