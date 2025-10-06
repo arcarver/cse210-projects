@@ -16,7 +16,7 @@ public class BreathingActivity : Activity
 
     public void Run()
     {
-        Console.WriteLine("Welcome to the Breathing Activity");
+        Console.WriteLine("Get ready...");
         Console.WriteLine();
         Console.WriteLine("This activity will help you relax by walking you throught breathing in and out slowly.  Clear your mind and focus on your breathing.");
         Console.WriteLine();

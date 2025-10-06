@@ -23,6 +23,10 @@ public class Activity
         Console.WriteLine();
         Console.Write("How long, in seconds, would you like for your sesssion? ");
         _duration = int.Parse(Console.ReadLine());
+        Console.Clear();
+
+        Console.WriteLine("Get ready...");
+
     }
     public void DisplayEndingMessage()
     {
