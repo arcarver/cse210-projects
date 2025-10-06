@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 public class ListingActivity : Activity
 {
     private int _count;
@@ -7,28 +9,53 @@ public class ListingActivity : Activity
     {
         _count = count;
         _prompts = promptlist;
+        _prompts.Add("Who are the people that you appreciate?");
+        _prompts.Add("What are personal strengths of yours?");
+        _prompts.Add("Who are people that you have helped this week?");
+        _prompts.Add("When have you felt the Holy Ghost this month?");
+        _prompts.Add("Who are some of your personal heroes?");
+
         _name = "Listing Activity";
-        _description = ;
+        _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+
         _duration = duration;
     }
     public void Run()
     {
         Console.WriteLine();
-        while (_duration > 0)
-        {
-            Console.Write("Breath in...");
-            ShowCountDown(4);
-            Console.WriteLine();
-            Console.Write("Breath out...");
-            ShowCountDown(6);
-            _duration = _duration - 10;
-        }
+        Console.WriteLine("List as many responses as you can to the following prompt:");
+
+        Console.WriteLine($"--- {GetRandomPrompt()}---");
+        Console.Write("You may begin in: ");
+
+        ShowCountDown(6);
+        GetListFromUser();
+       
+        Console.WriteLine($"You listed {_count} items!");
 
     }
-    public void GetRandomPrompt()
-    { }
+    public string GetRandomPrompt()
+    {
+        int numberOfQuestions = _prompts.Count;
+        Random questionSelector = new Random();
+        int pos = questionSelector.Next(0, numberOfQuestions);
+        string question = "";
+        question = _prompts[pos];
+        return (question);
+     }
     public List<string> GetListFromUser()
     {
-        return null;
+        while (_duration > 0)
+        {
+            List<string> replyList = new List<string>();
+            replyList.Add(Console.ReadLine());
+            // string reply = Console.ReadLine
+            // Console.ReadLine()
+            Thread.Sleep(10);
+            _duration = _duration - 10;
+            _count = replyList.Count;
+            
+        }
+        return [];
     }
 }
