@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 public class BreathingActivity : Activity
 {
-    public BreathingActivity(string name, string description, int duration) : base(name, description, duration)
+    public BreathingActivity(string name, string description) : base(name, description)
     { }
 
     public void Run()
@@ -11,7 +11,8 @@ public class BreathingActivity : Activity
         // Console.WriteLine("Get ready...");
         DisplayStartingMessage();
         Console.WriteLine();
-        while (_duration > 0)
+        int durationLeft = _duration;
+        while (durationLeft > 0)
         {
             Console.Write("Breath in...");
             ShowCountDown(4);
@@ -19,7 +20,7 @@ public class BreathingActivity : Activity
             Console.Write("Breath out...");
             ShowCountDown(6);
             Console.Clear();
-            _duration = _duration - 10;
+            durationLeft = durationLeft - 10;
         }
         DisplayEndingMessage();
     }

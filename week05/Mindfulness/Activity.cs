@@ -3,14 +3,15 @@ public class Activity
     protected string _name;
     protected string _description;
     protected int _duration;
-    public Activity(string name, string description, int duration)
+    public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-        _duration = duration;
+        _duration = 0;
     }
     public void DisplayStartingMessage()
     {
+        Console.Clear();
         Console.WriteLine($"Welcome to the {_name}.");
         Console.WriteLine();
         Console.WriteLine(_description);
@@ -59,7 +60,7 @@ public class Activity
         {
             string s = spinnerString[i];
             Console.Write(s);
-            Thread.Sleep(400);
+            Thread.Sleep(700);
             // This doesn't work under debugger
             // Run without debugger using Ctrl+F5
             Console.Write("\b \b");

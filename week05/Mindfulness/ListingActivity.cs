@@ -5,7 +5,7 @@ public class ListingActivity : Activity
     private int _count;
     private List<string> _prompts = new List<string>();
 
-    public ListingActivity(int count, List<string> promptlist, string name, string description, int duration) : base(name, description, duration)
+    public ListingActivity(int count, List<string> promptlist, string name, string description) : base(name, description)
     {
         _count = count;
         _prompts = promptlist;
@@ -17,8 +17,6 @@ public class ListingActivity : Activity
 
         _name = "Listing Activity";
         _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
-
-        _duration = duration;
     }
     public void Run()
     {
@@ -30,7 +28,7 @@ public class ListingActivity : Activity
 
         ShowCountDown(6);
         GetListFromUser();
-       
+
         Console.WriteLine($"You listed {_count} items!");
 
     }
@@ -41,21 +39,22 @@ public class ListingActivity : Activity
         int pos = questionSelector.Next(0, numberOfQuestions);
         string question = "";
         question = _prompts[pos];
-        return (question);
-     }
+        return question;
+    }
     public List<string> GetListFromUser()
     {
-        while (_duration > 0)
+        int durationLeft = _duration;
+        List<string> replyList = new List<string>();
+
+        while (durationLeft > 0)
         {
-            List<string> replyList = new List<string>();
             replyList.Add(Console.ReadLine());
             // string reply = Console.ReadLine
             // Console.ReadLine()
             Thread.Sleep(10);
-            _duration = _duration - 10;
+            durationLeft = durationLeft - 10;
             _count = replyList.Count;
-            
         }
-        return [];
+        return replyList;
     }
 }

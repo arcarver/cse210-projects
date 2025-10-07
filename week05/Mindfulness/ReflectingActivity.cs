@@ -2,7 +2,7 @@ public class ReflectingActivity : Activity
 {
     private List<string> _prompts = new List<string>();
     private List<string> _questions = new List<string>();
-    public ReflectingActivity(List<string> prompts, List<string> questions, string name, string description, int duration) : base(name, description, duration)
+    public ReflectingActivity(List<string> prompts, List<string> questions, string name, string description) : base(name, description)
     {
         _prompts = prompts;
         _prompts.Add("Think of a time when you stood up for someone else");
@@ -21,12 +21,13 @@ public class ReflectingActivity : Activity
         _questions.Add("What did you learn about yourself through this experience?");
         _questions.Add("How can you keep this experience in mind in the future?");
 
-       
+
     }
     public void Run()
     {
         Console.WriteLine();
-        while (_duration > 0)
+        int durationLeft = _duration;
+        while (durationLeft > 0)
         {
             Console.WriteLine();
             Console.Write("Consider the following prompt:");
@@ -53,7 +54,7 @@ public class ReflectingActivity : Activity
             Console.Write("You may begin in: ");
             ShowCountDown(4);
 
-            _duration = _duration - 4;
+            durationLeft = durationLeft - 4;
             GetRandomQuestion();
         }
 
@@ -65,9 +66,9 @@ public class ReflectingActivity : Activity
         int pos = promptSelector.Next(0, numberOfPrompts);
         string prompt = "";
         prompt = _prompts[pos];
-        return (prompt);
-        
-        }
+        return prompt;
+
+    }
     public string GetRandomQuestion()
     {
         int numberOfQuestions = _questions.Count;
@@ -75,7 +76,7 @@ public class ReflectingActivity : Activity
         int pos = questionSelector.Next(0, numberOfQuestions);
         string question = "";
         question = _questions[pos];
-        return (question);
+        return question;
     }
     public void DisplayPrompt()
     {
@@ -83,11 +84,12 @@ public class ReflectingActivity : Activity
     }
     public void DisplayQuestions()
     {
-        while (_duration > 0)
+        int durationLeft = _duration;
+        while (durationLeft > 0)
         {
             Console.Write($"> {_questions}");
             ShowSpinner(7);
-            _duration = _duration - 7;
+            durationLeft = durationLeft - 7;
         }
     }
 }
