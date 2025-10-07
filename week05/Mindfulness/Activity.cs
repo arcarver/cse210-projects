@@ -5,15 +5,9 @@ public class Activity
     protected int _duration;
     public Activity(string name, string description, int duration)
     {
-        //  name of activity
         _name = name;
-        name = "Name of Activity";
-        // description of activity
         _description = description;
-        description = "This is a description of the activity";
-        // how long in seconds the activty lasts
         _duration = duration;
-        duration = 30;
     }
     public void DisplayStartingMessage()
     {

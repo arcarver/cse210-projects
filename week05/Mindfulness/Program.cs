@@ -11,7 +11,7 @@ class Program
         Console.WriteLine("Welcome to my mindfullness Program");
 
         Activity activity1 = new Activity("home", "green", 30);
-        activity1.DisplayEndingMessage();
+        // activity1.DisplayEndingMessage();
         // Menu code will be active later
         bool finish = false;
         while (finish != true)
@@ -26,7 +26,11 @@ class Program
             if (choice == "1")
             // Breathing activity
             {
-
+                string name = "Breathing Activity";
+                string description = "This activity will help you relax by walking you though breathing in and out slowly. Clear your mind and focus on your breathing";
+                int duration = 30;
+                BreathingActivity breathingActivity1 = new BreathingActivity(name, description, duration);
+                breathingActivity1.Run();
             }
             else if (choice == "2") { }
             else if (choice == "3")
