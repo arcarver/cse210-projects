@@ -26,13 +26,12 @@ class Program
             if (choice == "1")
             // Breathing activity
             {
-                string name = "Breathing Activity";
-                string description = "This activity will help you relax by walking you though breathing in and out slowly. Clear your mind and focus on your breathing";
-                BreathingActivity breathingActivity1 = new BreathingActivity(name, description);
+                BreathingActivity breathingActivity1 = new BreathingActivity();
 
                 breathingActivity1.Run();
             }
             else if (choice == "2")
+            //  Reflecting Activity
             {
                 // _prompts = prompts;
                 // prompts.Add("Think of a time when you stood up for someone else");
@@ -50,9 +49,8 @@ class Program
                 // questions.Add("What could you learn from this experience that applies to other situations?");
                 // questions.Add("What did you learn about yourself through this experience?");
                 // questions.Add("How can you keep this experience in mind in the future?");
-                string name = "Reflecting Activity";
-                string description = "This activity will help you relect on times in your1 life when you have shown strenght and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life. ";
-                // ReflectingActivity reflectingActivity1 = new ReflectingActivity("prompts", "questions", name, description, duration);
+                ReflectingActivity reflectingActivity1 = new ReflectingActivity();
+                reflectingActivity1.Run();
             }
             else if (choice == "3")
             {
