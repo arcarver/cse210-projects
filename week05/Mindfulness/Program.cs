@@ -10,9 +10,6 @@ class Program
         Console.WriteLine("Hello World! This is the Mindfulness Project.");
         Console.WriteLine("Welcome to my mindfullness Program");
 
-        // Activity activity1 = new Activity("home", "green", 30);
-        // activity1.DisplayEndingMessage();
-
         bool finish = false;
         while (finish != true)
         {
@@ -27,13 +24,11 @@ class Program
             // Breathing activity
             {
                 BreathingActivity breathingActivity1 = new BreathingActivity();
-
                 breathingActivity1.Run();
             }
             else if (choice == "2")
             //  Reflecting Activity
             {
-
                 ReflectingActivity reflectingActivity1 = new ReflectingActivity();
                 reflectingActivity1.Run();
             }

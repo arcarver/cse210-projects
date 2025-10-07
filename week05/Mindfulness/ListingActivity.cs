@@ -13,9 +13,7 @@ public class ListingActivity : Activity
         _prompts.Add("What are personal strengths of yours?");
         _prompts.Add("Who are people that you have helped this week?");
         _prompts.Add("When have you felt the Holy Ghost this month?");
-        _prompts.Add("Who are some of your personal heroes?");
-
-       
+        _prompts.Add("Who are some of your personal heroes?");      
     }
     public void Run()
     {

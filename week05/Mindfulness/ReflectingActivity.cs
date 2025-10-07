@@ -1,7 +1,7 @@
 public class ReflectingActivity : Activity
 {
-    protected List<string> _prompts = new List<string>();
-    protected List<string> _questions = new List<string>();
+    private List<string> _prompts = new List<string>();
+    private List<string> _questions = new List<string>();
     public ReflectingActivity() : base("Reflecting Activity", "This activity will help you relect on times in your1 life when you have shown strenght and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
     {
         _prompts = new List<string>();
@@ -52,28 +52,6 @@ public class ReflectingActivity : Activity
             }
             DisplayEndingMessage();
         }
-
-
-
-
-
-
-
-        // Console.WriteLine();
-        // Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-        // Console.Write("You may begin in: ");
-        // ShowCountDown(4);
-
-
-        // GetRandomQuestion();
-
-        // while (durationLeft > 0)
-        // {
-        //     Console.Write($"> {_questions}");
-        //     ShowSpinner(7);
-        //     durationLeft = durationLeft - 7;
-        // }
-
     }
 
     public string GetRandomPrompt()
@@ -83,7 +61,6 @@ public class ReflectingActivity : Activity
         int pos = promptSelector.Next(0, numberOfPrompts);
         string prompt = _prompts[pos];
         return prompt;
-
     }
     public string GetRandomQuestion()
     {
