@@ -79,7 +79,7 @@ public class Activity
             Thread.Sleep(1000);
             // This doesn't work under debugger
             // Run without debugger using Ctrl+F5
-            Console.Write("\b\b  \b\b");
+            Console.Write("\b \b");
         }
     }
 }

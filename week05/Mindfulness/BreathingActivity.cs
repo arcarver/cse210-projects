@@ -9,15 +9,18 @@ public class BreathingActivity : Activity
     {
         // added this line to the Activity class.
         // Console.WriteLine("Get ready...");
+        DisplayStartingMessage();
         Console.WriteLine();
         while (_duration > 0)
         {
             Console.Write("Breath in...");
             ShowCountDown(4);
-            Console.WriteLine();
+            Console.Clear();
             Console.Write("Breath out...");
             ShowCountDown(6);
+            Console.Clear();
             _duration = _duration - 10;
         }
+        DisplayEndingMessage();
     }
 }

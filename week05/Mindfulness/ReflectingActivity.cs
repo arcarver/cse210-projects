@@ -21,9 +21,7 @@ public class ReflectingActivity : Activity
         _questions.Add("What did you learn about yourself through this experience?");
         _questions.Add("How can you keep this experience in mind in the future?");
 
-        _name = "Reflecting Activity";
-        _description = "This activity will help you relect on times in your life when you have shown strenght and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life. ";
-        _duration = duration;
+       
     }
     public void Run()
     {
