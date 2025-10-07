@@ -23,59 +23,65 @@ public class ReflectingActivity : Activity
     }
     public void Run()
     {
+
         DisplayStartingMessage();
         Console.WriteLine();
         int durationLeft = _duration;
         Console.WriteLine();
         Console.WriteLine("Consider the following prompt:");
-        GetRandomPrompt();
+        DisplayPrompt();
         Console.WriteLine("When you have something in mind, press enter to continue.");
 
         // using enter to move to next part of program
-        // ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+        ConsoleKeyInfo keyInfo = Console.ReadKey(false);
 
-        // if (keyInfo.Key == ConsoleKey.Enter)
+        while (keyInfo.Key != ConsoleKey.Enter)
         {
+            Console.WriteLine("Please press 'Enter' to continue");
+        }
+        {
+            Console.Clear();
+            Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+            Console.Write("Think about the question: ");
             while (durationLeft > 0)
             {
-                Console.WriteLine();
-                Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-                GetRandomQuestion();
-                Console.Write("You may begin in: ");
-                ShowCountDown(5);
+                DisplayQuestions();
+                ShowCountDown(7);
                 // Console.Clear();
-                durationLeft = durationLeft - 4;
+                durationLeft = durationLeft - 7;
             }
-            // }   
-
-            // else
-            //         {
-            //             Console.WriteLine("Please press 'Enter' to continue");
-            //         }
-            // Console.WriteLine();
-            // Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-            // Console.Write("You may begin in: ");
-            // ShowCountDown(4);
-
-
-            // GetRandomQuestion();
-
-            // while (durationLeft > 0)
-            // {
-            //     Console.Write($"> {_questions}");
-            //     ShowSpinner(7);
-            //     durationLeft = durationLeft - 7;
-            // }
-
+            DisplayEndingMessage();
         }
+
+
+
+
+
+
+
+        // Console.WriteLine();
+        // Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+        // Console.Write("You may begin in: ");
+        // ShowCountDown(4);
+
+
+        // GetRandomQuestion();
+
+        // while (durationLeft > 0)
+        // {
+        //     Console.Write($"> {_questions}");
+        //     ShowSpinner(7);
+        //     durationLeft = durationLeft - 7;
+        // }
+
     }
+
     public string GetRandomPrompt()
     {
         int numberOfPrompts = _prompts.Count;
         Random promptSelector = new Random();
         int pos = promptSelector.Next(0, numberOfPrompts);
-        string prompt = "HEllo woulrd";
-        prompt = _prompts[pos];
+        string prompt = _prompts[pos];
         return prompt;
 
     }
@@ -92,9 +98,11 @@ public class ReflectingActivity : Activity
     {
         Console.WriteLine($"---{GetRandomPrompt()}---");
     }
-    public void DisplayQuestions() {
-        
+    public void DisplayQuestions()
+    {
+        Console.WriteLine($"---{GetRandomQuestion()}---");
     }
-
-    
 }
+
+
+
