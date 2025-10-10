@@ -7,13 +7,16 @@ public class Shape
     {
         _color = color;
     }
-    public string GetColor()
+    public string GetColor(string color)
     {
-        return "";
-    }
-    public void SetColor(string _color)
-    {
+        // SetColor(color);
+        Console.WriteLine($"Color is: {color}");
         
+        return color;
+    }
+    public void SetColor(string color)
+    {
+        _color = color;
     }
     public virtual double GetArea()
     {
