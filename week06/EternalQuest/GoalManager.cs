@@ -212,7 +212,7 @@ public class GoalManager
             {
                 string finished = parts[4];
                 SimpleGoal simpleGoalInstance = new SimpleGoal(goalName, goalDescription, pointsToEarn);
-                if (finished == "true")
+                if (finished == "True")
                 {
                     simpleGoalInstance.RecordEvent();
                 }
