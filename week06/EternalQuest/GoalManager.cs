@@ -120,6 +120,7 @@ public class GoalManager
         string description = Console.ReadLine();
         Console.Write("What is the amount of points associated with this goal? ");
         string points = Console.ReadLine();
+        
         Goal newGoal;
         if (choice == "1")
         {
@@ -137,10 +138,11 @@ public class GoalManager
             Console.Write("How many times does this goal need to be accomplished for a bonus? ");
             string targetS = Console.ReadLine();
             int target = int.Parse(targetS);
+            int amountCompleted = 0;
             Console.Write($"What is the bonus for accomplishing your goal {target} times? ");
             string bonusS = Console.ReadLine();
             int bonus = int.Parse(bonusS);
-            newGoal = new ChecklistGoal(name, description, points, target, bonus);
+            newGoal = new ChecklistGoal(name, description, points, amountCompleted, target, bonus);
             _goals.Add(newGoal);
         }
         else
@@ -207,13 +209,15 @@ public class GoalManager
             }
             else if (goalType == "ChecklistGoal")
             {
-                string bonusPointsS = parts[4];
                 
-                int bonusPoints = int.Parse(bonusPointsS);
+                
+                string timesDoneS = parts[4];
+                int timesDone = int.Parse(timesDoneS);
                 string timeToDoGoalS = parts[5];
                 int timeToDoGoal = int.Parse(timeToDoGoalS);
-                string timesDoneS = parts[6];
-                int timesDone = int.Parse(timesDoneS);
+                string bonusPointsS = parts[6];
+
+                int bonusPoints = int.Parse(bonusPointsS);
                 ChecklistGoal checklistGoal = new ChecklistGoal(goalName, goalDescription, pointsToEarn, timesDone, timeToDoGoal, bonusPoints);
                 _goals.Add(checklistGoal);
             }
