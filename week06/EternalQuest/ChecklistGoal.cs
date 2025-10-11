@@ -22,7 +22,7 @@ public class ChecklistGoal : Goal
     }
     public override string GetDetailsString()
     {
-        return $"{base.GetDetailsString()} {_amountCompleted}/{_target}";
+        return $"{base.GetDetailsString()} Currently completed: {_amountCompleted}/{_target}";
     }
     public override string GetStringRepresntation()
     {
