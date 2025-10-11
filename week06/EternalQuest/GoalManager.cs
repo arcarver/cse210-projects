@@ -210,6 +210,8 @@ public class GoalManager
                 string bonusPoints = parts[4];
                 string timeToDoGoal = parts[5];
                 string timesDone = parts[6];
+                ChecklistGoal checklistGoal = new ChecklistGoal(name,description,points,target, bonus)
+                _goals.Add(ChecklistGoalInstance);
             }
             else if (goalType == "EternalGoal")
             {
