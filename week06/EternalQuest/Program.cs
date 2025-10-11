@@ -6,7 +6,9 @@ class Program
     {
         Console.WriteLine("Hello World! This is the EternalQuest Project.");
         // GoalManager goalManagerInstance = new GoalManager(5, []);
+
         GoalManager goalManagerInstance = new GoalManager(5, [new EternalGoal("goal1", "lots of detail", "5")]);
+        goalManagerInstance.Start();
         goalManagerInstance.SaveGoals();
         goalManagerInstance.LoadGoals();
         goalManagerInstance.ListGoalDetails();

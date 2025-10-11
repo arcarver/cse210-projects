@@ -10,9 +10,65 @@ public class GoalManager
         _score = score;
         _goals = goals;
     }
-    public void Start() { }
-    // Start - This is the "main" function for this class. It is called by Program.cs, and then runs the menu loop.
+    public void Start()
+    {
+        // Start - This is the "main" function for this class. It is called by Program.cs, and then runs the menu loop.
+        bool finish = false;
+        while (finish != true)
+        {
+            Console.WriteLine("Welcome to the 'Eternal Quest Game!");
+            DisplayPlayerInfo();
+            Console.WriteLine();
+            Console.WriteLine("Menu Options");
+            Console.WriteLine("   1. Create New Goals");
+            Console.WriteLine("   2. List Goals");
+            Console.WriteLine("   3. Save Goals");
+            Console.WriteLine("   4. Load Goals");
+            Console.WriteLine("   5. Record Event");
+            Console.WriteLine("   6. Save and Quit");
+            Console.WriteLine("   7. Quit");
+            string option = Console.ReadLine();
+            if (option == "1")
+            {
 
+            }
+            else if (option == "2")
+            {
+                ListGoalNames();
+            }
+            else if (option == "3")
+            {
+                SaveGoals();
+            }
+            else if (option == "4")
+            {
+                LoadGoals();
+            }
+            else if (option == "5")
+            {
+
+            }
+            else if (option == "6")
+            {
+                Console.WriteLine("Thank you for playing Eternal Quest!");
+                SaveGoals();
+                Console.WriteLine("Your goals have been saved.");
+                finish = true;
+
+
+            }
+            else if (option == "7")
+            {
+                Console.WriteLine("Thank you for playing Eternal Quest!");
+                finish = true;
+            }
+            else
+            {
+                Console.WriteLine("Please select a valid option");
+            }
+        }
+
+    }
     public void DisplayPlayerInfo()
     {
         // DisplayPlayerInfo - Displays the players current score.
