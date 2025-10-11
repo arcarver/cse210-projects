@@ -81,12 +81,17 @@ public class GoalManager
     public void ListGoalNames()
     {
         // ListGoalNames - Lists the names of each of the goals.
-        int goalNumber = 1;
-        foreach (Goal goalInstance in _goals)
+        // int goalNumber = 1;
+        // foreach (Goal goalInstance in _goals)
+        // {
+        //     string name = goalInstance.GetNameString();
+        //     Console.WriteLine($"{goalNumber}.  {name}");
+        //     goalNumber++;
+        // }
+        for (int i = 0; i < _goals.Count; i++)
         {
-            string name = goalInstance.GetNameString();
-            Console.WriteLine($"{goalNumber}.  {name}");
-            goalNumber++;
+            string name = _goals[i].GetNameString();
+            Console.WriteLine($"{i+1}.  {name}");
         }
     }
     public void ListGoalDetails()
@@ -160,9 +165,11 @@ public class GoalManager
         Console.WriteLine();
         Console.WriteLine("The goals are:");
         ListGoalNames();
-        Com
-
-
+        Console.Write("Which goal did you accomplish? ");
+        string selectionS = Console.ReadLine();
+        int selection = int.Parse(selectionS);
+        selection--;
+        _goals[selection].RecordEvent();
     }
 
     public void SaveGoals()
