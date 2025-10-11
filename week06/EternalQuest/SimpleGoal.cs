@@ -7,14 +7,14 @@ public class SimpleGoal : Goal
     }
     public override void RecordEvent()
     {
-        throw new NotImplementedException();
+        
     }
     public override bool IsComplete()
     {
-        throw new NotImplementedException();
+        return false;
     }
     public override string GetStringRepresntation()
     {
-        throw new NotImplementedException();
+        return "";
     }
 }
