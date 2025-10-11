@@ -207,11 +207,15 @@ public class GoalManager
             }
             else if (goalType == "ChecklistGoal")
             {
-                string bonusPoints = parts[4];
-                string timeToDoGoal = parts[5];
-                string timesDone = parts[6];
-                ChecklistGoal checklistGoal = new ChecklistGoal(name,description,points,target, bonus)
-                _goals.Add(ChecklistGoalInstance);
+                string bonusPointsS = parts[4];
+                
+                int bonusPoints = int.Parse(bonusPointsS);
+                string timeToDoGoalS = parts[5];
+                int timeToDoGoal = int.Parse(timeToDoGoalS);
+                string timesDoneS = parts[6];
+                int timesDone = int.Parse(timesDoneS);
+                ChecklistGoal checklistGoal = new ChecklistGoal(goalName, goalDescription, pointsToEarn, timesDone, timeToDoGoal, bonusPoints);
+                _goals.Add(checklistGoal);
             }
             else if (goalType == "EternalGoal")
             {
