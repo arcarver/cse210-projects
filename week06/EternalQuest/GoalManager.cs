@@ -37,7 +37,7 @@ public class GoalManager
             }
             else if (option == "2")
             {
-                ListGoalNames();
+                // ListGoalNames();
                 ListGoalDetails();
             }
             else if (option == "3")
@@ -81,10 +81,12 @@ public class GoalManager
     public void ListGoalNames()
     {
         // ListGoalNames - Lists the names of each of the goals.
+        int goalNumber = 1;
         foreach (Goal goalInstance in _goals)
         {
             string name = goalInstance.GetNameString();
-            Console.Write(name);
+            Console.WriteLine($"{goalNumber}.  {name}");
+            goalNumber++;
         }
     }
     public void ListGoalDetails()
@@ -157,8 +159,10 @@ public class GoalManager
         // RecordEvent - Asks the user which goal they have done and then records the event by calling the RecordEvent method on that goal.
         Console.WriteLine();
         Console.WriteLine("The goals are:");
-        ListGoalDetails();
-        
+        ListGoalNames();
+        Com
+
+
     }
 
     public void SaveGoals()
