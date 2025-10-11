@@ -9,11 +9,11 @@ class Program
 
         GoalManager goalManagerInstance = new GoalManager(5, [new EternalGoal("goal1", "lots of detail", "5")]);
         goalManagerInstance.Start();
-        goalManagerInstance.SaveGoals();
-        goalManagerInstance.LoadGoals();
-        goalManagerInstance.ListGoalDetails();
-        goalManagerInstance.ListGoalNames();
-        SimpleGoal newGoal = new SimpleGoal("name", "desc", "5");
+        // goalManagerInstance.SaveGoals();
+        // goalManagerInstance.LoadGoals();
+        // goalManagerInstance.ListGoalDetails();
+        // goalManagerInstance.ListGoalNames();
+        // SimpleGoal newGoal = new SimpleGoal("name", "desc", "5");
         // yay record event works
         // newGoal.RecordEvent();
 
