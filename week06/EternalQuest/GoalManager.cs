@@ -57,7 +57,7 @@ public class GoalManager
             {
                 Console.WriteLine("Thank you for playing Eternal Quest!");
                 SaveGoals();
-                Console.WriteLine("Your goals have been saved.");
+                
                 finish = true;
 
 
@@ -188,8 +188,8 @@ public class GoalManager
     {
         // SaveGoals - Saves the list of goals to a file.
         Console.Write("What is the filename for the goal file? ");
-        // string fileName = Console.ReadLine();
-        string fileName = "a.txt";
+        string fileName = Console.ReadLine();
+        // string fileName = "a.txt";
 
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
@@ -200,6 +200,7 @@ public class GoalManager
                 outputFile.WriteLine(goalInstance.GetStringRepresntation());
             }
         }
+        Console.WriteLine($"Your goals have been saved as {fileName}.");
 
     }
     public void LoadGoals()
@@ -207,11 +208,14 @@ public class GoalManager
         
         // LoadGoals - Loads the list of goals from a file.
         Console.WriteLine("What is the name of the file you would like to load? ");
-        // string loadFileName = Console.ReadLine();
-        string loadFileName = "a.txt";
-        _score = 50000;
+        string loadFileName = Console.ReadLine();
+        // string loadFileName = "a.txt";
+        // _score = 50000;
         string[] lines = System.IO.File.ReadAllLines(loadFileName);
-        string score = lines[0];
+
+        string scoreS = lines[0];
+        int score = int.Parse(scoreS);
+        _score += score;
         for (int i = 1; i < lines.Length; ++i)
         {
             string line = lines[i];
@@ -252,7 +256,7 @@ public class GoalManager
 
         }
 
-
+        Console.WriteLine($"Your have loaded {loadFileName}.");
 
     }
 }
