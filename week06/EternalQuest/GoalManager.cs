@@ -210,7 +210,7 @@ public class GoalManager
         // string loadFileName = Console.ReadLine();
         string loadFileName = "a.txt";
         string[] lines = System.IO.File.ReadAllLines(loadFileName);
-        string sscore = lines[0];
+        string score = lines[0];
         for (int i = 1; i < lines.Length; ++i)
         {
             string line = lines[i];
