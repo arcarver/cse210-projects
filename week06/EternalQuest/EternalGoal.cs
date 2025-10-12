@@ -9,12 +9,10 @@ public class EternalGoal : Goal
     {
         // Eternal goal never completes
     }
-
     public override bool IsComplete()
     {
         return false;
     }
-
     public override string GetStringRepresntation()
     {
         return $"EternalGoal,{_shortName},{_description},{_points}";

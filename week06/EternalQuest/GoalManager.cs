@@ -1,8 +1,4 @@
-using System.Security.Cryptography.X509Certificates;
 using System.IO;
-using System.Runtime;
-using System.Threading.Channels;
-
 public class GoalManager
 {
     private List<Goal> _goals = new List<Goal>();
@@ -19,7 +15,6 @@ public class GoalManager
         bool finish = false;
         while (finish != true)
         {
-
             Console.WriteLine();
             Console.WriteLine($"You have {_score} points.");
             Console.WriteLine();
@@ -59,8 +54,6 @@ public class GoalManager
                 SaveGoals();
 
                 finish = true;
-
-
             }
             else if (option == "7")
             {
@@ -72,7 +65,6 @@ public class GoalManager
                 Console.WriteLine("Please select a valid option");
             }
         }
-
     }
     public void DisplayPlayerInfo()
     {
@@ -104,11 +96,9 @@ public class GoalManager
             if (goalInstance.IsComplete())
             {
                 Console.WriteLine($"[X] {details}");
-
             }
             else
             {
-
                 Console.WriteLine($"[ ] {details}");
             }
         }
@@ -138,7 +128,6 @@ public class GoalManager
         }
         else if (choice == "2")
         {
-
             newGoal = new EternalGoal(name, description, points);
             _goals.Add(newGoal);
         }
@@ -158,8 +147,6 @@ public class GoalManager
         {
             Console.WriteLine("Please select a valid option.");
         }
-
-
     }
     public void RecordEvent()
     {
@@ -171,25 +158,27 @@ public class GoalManager
         string selectionS = Console.ReadLine();
         int selection = int.Parse(selectionS);
         selection--;
-        _goals[selection].RecordEvent();
-        // award points 
-        string pointsS = _goals[selection].GetPoints();
-        int points = int.Parse(pointsS);
+        if (selection >= 0 && selection < _goals.Count)
+        {
+            _goals[selection].RecordEvent();
+            // award points 
+            string pointsS = _goals[selection].GetPoints();
+            int points = int.Parse(pointsS);
 
-        _score += points;
-
-
-
-
-
+            _score += points;
+        }
+        else
+        {
+            Console.WriteLine("Not a valid selection.");
+        }
     }
 
     public void SaveGoals()
     {
         // SaveGoals - Saves the list of goals to a file.
         Console.Write("What is the filename for the goal file? ");
-        // string fileName = Console.ReadLine();
-        string fileName = "a.txt";
+        string fileName = Console.ReadLine();
+        // string fileName = "a.txt";
 
         using (StreamWriter outputFile = new StreamWriter(fileName, false))
         {
@@ -201,15 +190,13 @@ public class GoalManager
             }
         }
         Console.WriteLine($"Your goals have been saved as {fileName}.");
-
     }
     public void LoadGoals()
     {
-
         // LoadGoals - Loads the list of goals from a file.
         Console.WriteLine("What is the name of the file you would like to load? ");
-        // string loadFileName = Console.ReadLine();
-        string loadFileName = "a.txt";
+        string loadFileName = Console.ReadLine();
+        // string loadFileName = "a.txt";
         // _score = 50000;
         string[] lines = System.IO.File.ReadAllLines(loadFileName);
 
@@ -237,8 +224,6 @@ public class GoalManager
             }
             else if (goalType == "ChecklistGoal")
             {
-
-
                 string timesDoneS = parts[4];
                 int timesDone = int.Parse(timesDoneS);
                 string timeToDoGoalS = parts[5];
@@ -253,10 +238,8 @@ public class GoalManager
             {
                 _goals.Add(new EternalGoal(goalName, goalDescription, pointsToEarn));
             }
-
         }
 
-        Console.WriteLine($"Your have loaded {loadFileName}.");
-
+        Console.WriteLine($"You have loaded {loadFileName}.");
     }
 }
