@@ -57,7 +57,7 @@ public class GoalManager
             {
                 Console.WriteLine("Thank you for playing Eternal Quest!");
                 SaveGoals();
-                
+
                 finish = true;
 
 
@@ -92,7 +92,7 @@ public class GoalManager
         for (int i = 0; i < _goals.Count; i++)
         {
             string name = _goals[i].GetNameString();
-            Console.WriteLine($"{i+1}.  {name}");
+            Console.WriteLine($"{i + 1}.  {name}");
         }
     }
     public void ListGoalDetails()
@@ -104,11 +104,11 @@ public class GoalManager
             if (goalInstance.IsComplete())
             {
                 Console.WriteLine($"[X] {details}");
-                
+
             }
             else
             {
-                
+
                 Console.WriteLine($"[ ] {details}");
             }
         }
@@ -129,7 +129,7 @@ public class GoalManager
         string description = Console.ReadLine();
         Console.Write("What is the amount of points associated with this goal? ");
         string points = Console.ReadLine();
-        
+
         Goal newGoal;
         if (choice == "1")
         {
@@ -158,8 +158,8 @@ public class GoalManager
         {
             Console.WriteLine("Please select a valid option.");
         }
-        
-        
+
+
     }
     public void RecordEvent()
     {
@@ -177,21 +177,21 @@ public class GoalManager
         int points = int.Parse(pointsS);
 
         _score += points;
-       
-       
 
-        
-        
+
+
+
+
     }
-    
+
     public void SaveGoals()
     {
         // SaveGoals - Saves the list of goals to a file.
         Console.Write("What is the filename for the goal file? ");
-        string fileName = Console.ReadLine();
-        // string fileName = "a.txt";
+        // string fileName = Console.ReadLine();
+        string fileName = "a.txt";
 
-        using (StreamWriter outputFile = new StreamWriter(fileName))
+        using (StreamWriter outputFile = new StreamWriter(fileName, false))
         {
             outputFile.WriteLine(_score);
 
@@ -205,17 +205,17 @@ public class GoalManager
     }
     public void LoadGoals()
     {
-        
+
         // LoadGoals - Loads the list of goals from a file.
         Console.WriteLine("What is the name of the file you would like to load? ");
-        string loadFileName = Console.ReadLine();
-        // string loadFileName = "a.txt";
+        // string loadFileName = Console.ReadLine();
+        string loadFileName = "a.txt";
         // _score = 50000;
         string[] lines = System.IO.File.ReadAllLines(loadFileName);
 
-        string scoreS = lines[0];
-        int score = int.Parse(scoreS);
-        _score += score;
+        _goals = new List<Goal>();
+        int score = int.Parse(lines[0]);
+        _score = score;
         for (int i = 1; i < lines.Length; ++i)
         {
             string line = lines[i];
@@ -237,8 +237,8 @@ public class GoalManager
             }
             else if (goalType == "ChecklistGoal")
             {
-                
-                
+
+
                 string timesDoneS = parts[4];
                 int timesDone = int.Parse(timesDoneS);
                 string timeToDoGoalS = parts[5];
