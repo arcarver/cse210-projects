@@ -21,8 +21,13 @@ public abstract class Goal
         return $"{_shortName} ({_description})";
     }
     public abstract string GetStringRepresntation();
-    public string GetPoints()
+    public virtual string GetPoints()
     {
         return _points;
     }
+    // public string GetBonus()
+    // {
+    //     int bonus = 
+    //     return _bonus;
+    // }
 }

@@ -1,6 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 using System.IO;
 using System.Runtime;
+using System.Threading.Channels;
 
 public class GoalManager
 {
@@ -174,7 +175,10 @@ public class GoalManager
         // award points 
         string pointsS = _goals[selection].GetPoints();
         int points = int.Parse(pointsS);
+
         _score += points;
+       
+       
 
         
         
