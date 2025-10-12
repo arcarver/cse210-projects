@@ -103,6 +103,7 @@ public class GoalManager
             if (goalInstance.IsComplete())
             {
                 Console.WriteLine($"[X] {details}");
+                
             }
             else
             {
@@ -170,8 +171,15 @@ public class GoalManager
         int selection = int.Parse(selectionS);
         selection--;
         _goals[selection].RecordEvent();
-    }
+        // award points 
+        string pointsS = _goals[selection].GetPoints();
+        int points = int.Parse(pointsS);
+        _score += points;
 
+        
+        
+    }
+    
     public void SaveGoals()
     {
         // SaveGoals - Saves the list of goals to a file.
@@ -192,7 +200,7 @@ public class GoalManager
     }
     public void LoadGoals()
     {
-        _goals = new List<Goal>();
+        
         // LoadGoals - Loads the list of goals from a file.
         Console.WriteLine("What is the name of the file you would like to load? ");
         // string loadFileName = Console.ReadLine();
