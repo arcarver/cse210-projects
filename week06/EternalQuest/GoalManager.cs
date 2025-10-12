@@ -209,6 +209,7 @@ public class GoalManager
         Console.WriteLine("What is the name of the file you would like to load? ");
         // string loadFileName = Console.ReadLine();
         string loadFileName = "a.txt";
+        _score = 50000;
         string[] lines = System.IO.File.ReadAllLines(loadFileName);
         string score = lines[0];
         for (int i = 1; i < lines.Length; ++i)
