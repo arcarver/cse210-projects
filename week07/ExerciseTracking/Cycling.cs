@@ -1,7 +1,7 @@
-public class Cycling
+public class Cycling : Exercise
 {
     private int _speed;
-    public Cycling()
+    public Cycling() : base()
     {
 
     }
