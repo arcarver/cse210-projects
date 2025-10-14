@@ -6,8 +6,7 @@ public class Running : Exercise
 
     public Running(string date, double length, double distance) : base(date, length)
     {
-        _distance = distance;
-        
+        _distance = distance;        
     }
     public override double GetDistance() 
     {
@@ -17,7 +16,6 @@ public class Running : Exercise
     {
         double speed = 60 * (_distance / _length);
         return speed;
-        // return 60 * (_distance / _length);
     }
     public override double GetPace()
     {
