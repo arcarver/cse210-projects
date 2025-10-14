@@ -1,7 +1,7 @@
-public class Swimming
+public class Swimming : Exercise
 {
     private int _numLaps;
-    public Swimming()
+    public Swimming() : base()
     {
 
     }

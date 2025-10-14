@@ -1,14 +1,15 @@
-public class Exercise
+public abstract class Exercise
 {
     private string _date;
     private int _length;
-    public Exercise()
+    public Exercise(string date, int length)
     {
-
+        _date = date;
+        _length = length;
     }
-    public double GetDistance()
+    public abstract double GetDistance()
     {
-        return 3;
+        
     }
     public double GetSpeed()
     {

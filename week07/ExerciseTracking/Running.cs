@@ -1,12 +1,12 @@
-public class Running
+public class Running : Exercise
 {
     private int _distance;
 
-    public Running()
+    public Running() : base()
     {
 
     }
-    public double GetDistance()
+    public double GetDistance() 
     {
 
     }
