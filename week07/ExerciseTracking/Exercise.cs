@@ -1,8 +1,8 @@
 public abstract class Exercise
 {
     protected string _date;
-    protected int _length;
-    public Exercise(string date, int length)
+    protected double _length;
+    public Exercise(string date, double length)
     {
         _date = date;
         _length = length;

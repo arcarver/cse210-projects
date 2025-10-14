@@ -1,13 +1,14 @@
 public class Cycling : Exercise
 {
-    private int _speed;
-    public Cycling(string date, int length, int speed) : base(date, length)
+    private double _speed;
+    public Cycling(string date, double length, double speed) : base(date, length)
     {
         _speed = speed;
     }
     public override double GetDistance()
     {
-        int distance = length * _speed;
+        double distance = _length * _speed;
+        return distance;
     }
     public override double GetSpeed()
     {
@@ -15,11 +16,11 @@ public class Cycling : Exercise
     }
     public override double GetPace()
     {
-        int pace = 60 / _speed;
+        double pace = 60 / _speed;
         return pace;
     }
     public override string GetSummary()
     {
-        return $"{date} Running ({length})- Distance {GetDistance()}, Speed {_speed} mph, Pace: {GetPace()} min per mile";
+        return $"{_date} Cycling ({_length})- Distance {GetDistance()}, Speed {_speed} mph, Pace: {GetPace()} min per mile";
     }
 }

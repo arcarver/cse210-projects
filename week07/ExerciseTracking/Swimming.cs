@@ -2,8 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 public class Swimming : Exercise
 {
-    private int _numLaps;
-    public Swimming(string date, int length, int numLaps) : base(date, length)
+    private double _numLaps;
+    public Swimming(string date, double length, double numLaps) : base(date, length)
     {
         _numLaps = numLaps;
     }
@@ -14,7 +14,7 @@ public class Swimming : Exercise
     }
     public override double GetSpeed()
     {
-        int speed = GetDistance() / length * 60;
+        double speed = GetDistance() / _length * 60;
         return speed;
     }
     public override double GetPace()
@@ -24,6 +24,6 @@ public class Swimming : Exercise
     }
     public override string GetSummary()
     {
-        return $"{date} Running ({length})- Distance {GetDistance()}, Speed {GetSpeed()} mph, Pace: {GetPace()} min per mile";
+        return $"{_date} Swimming ({_length})- Distance {GetDistance()}, Speed {GetSpeed()} mph, Pace: {GetPace()} min per mile";
     }
 }

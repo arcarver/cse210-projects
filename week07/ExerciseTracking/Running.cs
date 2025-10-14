@@ -2,11 +2,12 @@ using System.ComponentModel.DataAnnotations;
 
 public class Running : Exercise
 {
-    private int _distance;
+    private double _distance;
 
-    public Running(string date, int length, int distance) : base(date, length)
+    public Running(string date, double length, double distance) : base(date, length)
     {
         _distance = distance;
+        
     }
     public override double GetDistance() 
     {
@@ -14,8 +15,9 @@ public class Running : Exercise
     }
     public override double GetSpeed()
     {
-        double speed = _distance / _length;
+        double speed = 60 * (_distance / _length);
         return speed;
+        // return 60 * (_distance / _length);
     }
     public override double GetPace()
     {
@@ -24,6 +26,6 @@ public class Running : Exercise
     }
     public override string GetSummary()
     {
-        return $"{date} Running ({length})- Distance {_distance}, Speed {GetSpeed()} mph, Pace: {GetPace()} min per mile";
+        return $"{_date} Running ({_length})- Distance {_distance}, Speed {GetSpeed()} mph, Pace: {GetPace()} min per mile";
     }
 }
