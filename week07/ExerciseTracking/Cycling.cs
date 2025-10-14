@@ -1,24 +1,25 @@
 public class Cycling : Exercise
 {
     private int _speed;
-    public Cycling() : base()
+    public Cycling(string date, int length, int speed) : base(date, length)
     {
-
+        _speed = speed;
     }
-    public double GetDistance()
+    public override double GetDistance()
     {
-
+        int distance = length * _speed;
     }
-    public double GetSpeed()
+    public override double GetSpeed()
     {
-
+        return _speed;
     }
-    public double GetPace()
+    public override double GetPace()
     {
-
+        int pace = 60 / _speed;
+        return pace;
     }
-    public string GetSummary()
+    public override string GetSummary()
     {
-
+        return $"{date} Running ({length})- Distance {GetDistance()}, Speed {_speed} mph, Pace: {GetPace()} min per mile";
     }
 }

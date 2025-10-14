@@ -1,26 +1,16 @@
 public abstract class Exercise
 {
-    private string _date;
-    private int _length;
+    protected string _date;
+    protected int _length;
     public Exercise(string date, int length)
     {
         _date = date;
         _length = length;
+        // Exercise excecise2 = new Exercise("Oct 31, 2024", 5);
     }
-    public abstract double GetDistance()
-    {
-        
-    }
-    public double GetSpeed()
-    {
-        return 4;
-    }
-    public double GetPace()
-    {
-
-    }
-    public string GetSummary()
-    {
-        
-    }
+    public abstract double GetDistance();
+    public abstract double GetSpeed();
+    public abstract double GetPace();
+    public abstract string GetSummary();
+ 
 }
